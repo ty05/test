@@ -97,32 +97,32 @@ public partial class SaasKitContext : DbContext
             entity.Property(e => e.Bcc)
                 .HasColumnName("BCC")
                 .HasMaxLength(1000)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             entity.Property(e => e.Cc)
                 .HasColumnName("CC")
                 .HasMaxLength(1000)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             entity.Property(e => e.Description)
                 .HasMaxLength(1000)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             entity.Property(e => e.InsertDate).HasColumnType("datetime");
 
             entity.Property(e => e.Status)
                 .HasMaxLength(1000)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             entity.Property(e => e.Subject)
                 .HasMaxLength(1000)
                 .IsUnicode(false);
 
-            entity.Property(e => e.TemplateBody).IsUnicode(false);
+            entity.Property(e => e.TemplateBody).IsUnicode(true);
 
             entity.Property(e => e.ToRecipients)
                 .HasMaxLength(1000)
-                .IsUnicode(false);
+                .IsUnicode(true);
         });
 
         modelBuilder.Entity<Events>(entity =>
@@ -138,7 +138,7 @@ public partial class SaasKitContext : DbContext
         {
             entity.Property(e => e.UserEmail)
                 .HasMaxLength(50)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             entity.HasOne(d => d.Role)
                 .WithMany(p => p.KnownUsers)
@@ -374,7 +374,7 @@ public partial class SaasKitContext : DbContext
 
             entity.Property(e => e.Name)
                 .HasMaxLength(225)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             entity.Property(e => e.Value).IsUnicode(false);
         });
@@ -440,11 +440,11 @@ public partial class SaasKitContext : DbContext
 
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             entity.Property(e => e.PurchaserEmail)
                 .HasMaxLength(225)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             entity.Property(e => e.SubscriptionStatus)
                 .HasMaxLength(50)
@@ -468,11 +468,11 @@ public partial class SaasKitContext : DbContext
 
             entity.Property(e => e.EmailAddress)
                 .HasMaxLength(100)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             entity.Property(e => e.FullName)
                 .HasMaxLength(200)
-                .IsUnicode(false);
+                .IsUnicode(true);
         });
 
         modelBuilder.Entity<ValueTypes>(entity =>
